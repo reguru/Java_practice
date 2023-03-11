@@ -39,5 +39,6 @@ class Main {
     // System.out.println(weight);
     // System.out.println(bmi);
     
+    
    }
 }
