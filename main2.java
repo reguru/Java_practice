@@ -48,5 +48,17 @@ class Main {
       }
       System.out.println(j);
     }
+    
+    String[] names = {"Alice","John","Takasi"};
+    
+    System.out.println(names[1]);
+    
+    for (int i = 0; i < names.length; i++) {
+      System.out.println("私は" + names[i] + "です");
+    }
+    
+    for (String name: names) {
+      System.out.println("私は" + name + "です");
+    }
   }
 }
