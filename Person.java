@@ -45,5 +45,61 @@ class Person {
   public void hello() {
     System.out.println("こんにちは、私は" + this.name + "です");
   }
+  
+  //-------------------------------------------------------------------------------//
+  private static int count = 0; //クラス外からアクセス不可
+  private String firstName;     //クラス外からアクセス可
+  private String lastName;
+  public int age;
+  public double height;
+  public double weight;
+  private String job;
+
+  Person(String firstName, String lastName, int age, double height, double weight, String job) {
+    Person.count ++;
+    
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.height = height;
+    this.weight = weight;
+    this.job = job;
+  }
+  
+  public String fullName(){
+    if (this.middleName == null) {
+      return this.firstName + " " + this.lastName;
+    } else {
+      return this.firstName + " " + this.middleName + " " + this.lastName;
+    }
+    
+  }
+  
+  public String getMiddleName() {
+    return this.middleName;
+  }
+  
+  //ゲッター
+  public String getJob() {
+    return this.job;
+  }
+  //セッター
+  public void setJob(String job) {
+    this.job = job;
+  }
+  
+  public double bmi(){
+    return this.weight / this.height / this.height;
+  }
+  
+  public void printData(){
+    System.out.println("私の名前は" + this.fullName() + "です");
+    System.out.println("年齢は" + this.age + "歳です");
+    System.out.println("BMIは" + Math.round(this.bmi()) + "です");
+  }
+  
+  public static void printCount() {
+    System.out.println("合計" + Person.count + "人です");
+  }
 
 }
